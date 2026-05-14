@@ -11,3 +11,20 @@
 * **禁止重置**：当涉及 `git reset` 时，提示词应为：“请先解释 reset 会影响哪些文件和 commit，不要直接执行。”
 * **禁止强推**：绝不使用 `force push`，避免抹除他人的数字劳动痕迹。
 * **主干保护**：任何修改前，必须确认当前不在 main 分支。
+
+## Worktree 中使用 Agent 的提示词
+
+当我在 worktree 中使用 coding agent 时，我会先说明边界：
+
+```text
+你现在只能在当前 worktree 工作。
+先运行 pwd、git branch --show-current、git status。
+确认当前分支不是 main。
+不要切换分支，不要使用 reset，不要 force push。
+只修改本次任务指定的文件。
+完成后总结 diff，先不要 commit，等我确认。
+多 Agent 并行注意事项
+不要让两个 agent 在同一个目录工作。
+每个 agent 使用独立 worktree 和独立分支。
+每个任务只修改指定文件。
+合并前必须通过 PR review。
