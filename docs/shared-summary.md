@@ -1,0 +1,3 @@
+# Shared Summary
+
+本项目展示了 Git 如何帮助团队减少最终版地狱。
